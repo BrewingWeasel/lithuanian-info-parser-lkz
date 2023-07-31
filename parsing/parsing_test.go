@@ -2,11 +2,21 @@ package parsing
 
 import "testing"
 
-func TestRemoveAccentuation(t *testing.T) {
-	result := removeAccentuation("supràsti")
-	expected := "suprasti"
+var accentRemoval = map[string]string{
+	"supràsti":                  "suprasti",
+	"suprañta":                  "supranta",
+	"suprañtančiai":             "suprantančiai",
+	"išpràsti":                  "išprasti",
+	"svei̇̃kas":                  "sveikas",
+	"labas":                      "labas",
+	"egzistúoti, -úoja, -ãvo": "egzistuoti, -uoja, -avo",
+}
 
-	if result != expected {
-		t.Errorf("got %q, expected %q", result, expected)
+func TestRemoveAccentuation(t *testing.T) {
+	for testing, expected := range accentRemoval {
+		result := removeAccentuation(testing)
+		if result != expected {
+			t.Errorf("got %q, expected %q", result, expected)
+		}
 	}
 }
