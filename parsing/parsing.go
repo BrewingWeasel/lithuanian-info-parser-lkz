@@ -42,7 +42,7 @@ func createVerbVals(verbInfo [3]string) [3]string {
 	verbInfo[2] = strings.TrimSpace(verbInfo[2])
 	if strings.HasPrefix(verbInfo[1], "-") {
 		log.Debug("Using prefixed")
-		if len(verbInfo[1]) == 2 {
+		if len(verbInfo[1]) <= 3 {
 			removedVerbEnding := strings.TrimSuffix(verbInfo[0], "ti")
 			if strings.HasSuffix(removedVerbEnding, "y") || strings.HasSuffix(removedVerbEnding, "ė") {
 				removedVerbEnding = removedVerbEnding[:len(removedVerbEnding)-2]
