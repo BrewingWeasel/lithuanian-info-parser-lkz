@@ -45,7 +45,7 @@ func createVerbVals(verbInfo [3]string) [3]string {
 		if len(verbInfo[1]) <= 3 {
 			removedVerbEnding := strings.TrimSuffix(verbInfo[0], "ti")
 			if strings.HasSuffix(removedVerbEnding, "y") || strings.HasSuffix(removedVerbEnding, "ė") {
-				removedVerbEnding = removedVerbEnding[:len(removedVerbEnding)-2]
+				removedVerbEnding = removedVerbEnding[:len(removedVerbEnding)-1]
 			}
 			verbInfo[1] = removedVerbEnding + verbInfo[1][1:]
 			verbInfo[2] = removedVerbEnding + verbInfo[2][1:]

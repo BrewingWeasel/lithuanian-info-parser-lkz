@@ -20,6 +20,7 @@ var getVerbFormsTests = map[[3]string][3]string{
 	{"normalėti", "-ėja", "-ėjo"}:   {"normalėti", "normalėja", "normalėjo"},
 	{"kaušti", "-ia", "-ė"}:         {"kaušti", "kaušia", "kaušė"},
 	{"mušti", "-a", "-ė"}:           {"mušti", "muša", "mušė"},
+	{"aidyti", "-o", "-ė"}:          {"aidyti", "aido", "aidė"},
 }
 
 func TestRemoveAccentuation(t *testing.T) {
