@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/brewingweasel/verbfetcher/parsing"
-	"github.com/brewingweasel/verbfetcher/scraping"
+	"github.com/brewingweasel/lithuanian-info-parser-lkz/parsing"
+	"github.com/brewingweasel/lithuanian-info-parser-lkz/scraping"
 	"github.com/charmbracelet/log"
 )
 

@@ -1,4 +1,4 @@
-module github.com/brewingweasel/verbfetcher
+module github.com/brewingweasel/lithuanian-info-parser-lkz
 
 go 1.20
 
