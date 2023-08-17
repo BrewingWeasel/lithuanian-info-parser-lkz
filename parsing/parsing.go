@@ -60,3 +60,39 @@ func createVerbVals(verbInfo [3]string) [3]string {
 	}
 	return verbInfo
 }
+
+func GetGenderDecl(val string, word string) (string, string) {
+	if strings.Contains(val, "sm.") {
+		declension := get_declension(val, word)
+		return "masc", declension
+	} else if strings.Contains(val, "sf.") {
+		return "fem", ""
+	}
+	return "??", ""
+}
+
+func get_declension(val string, word string) string {
+	test_declined := map[string]string{
+		"io":    "1",
+		"ies":   "3",
+		"imi":   "3",
+		"ie":    "3",
+		"ys":    "3",
+		"iai":   "1",
+		"iams":  "1",
+		"ims":   "3",
+		"imis":  "3",
+		"iais":  "1",
+		"iuose": "1",
+		"yse":   "3",
+	}
+	withoutAccents := removeAccentuation(val)
+
+	word = word[:len(word)-2]
+	for ending, decl := range test_declined {
+		if strings.Contains(withoutAccents, " "+word+ending) {
+			return decl
+		}
+	}
+	return "?"
+}

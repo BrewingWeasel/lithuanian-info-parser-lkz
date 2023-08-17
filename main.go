@@ -9,9 +9,10 @@ import (
 )
 
 func main() {
-	log.SetLevel(log.DebugLevel)
-	id := scraping.GetIdOfWord("mušti")
+	word := "kąsnis"
+	log.SetLevel(log.WarnLevel)
+	id := scraping.GetIdOfWord(word)
 	log.Info(id)
 	lkzContents := scraping.GetWordDetails(id)
-	fmt.Println(parsing.GetVerbInfo(lkzContents))
+	fmt.Println(parsing.GetGenderDecl(lkzContents, word))
 }
